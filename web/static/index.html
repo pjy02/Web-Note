@@ -8,6 +8,7 @@
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
+  <div id="toastContainer" class="toast-container"></div>
   <header class="top-bar">
     <div class="brand">Server Notes</div>
     <input id="searchInput" type="search" placeholder="搜索标题..." />
@@ -37,6 +38,7 @@
         <button id="saveBtn">保存</button>
         <button id="deleteBtn" class="danger">删除</button>
       </div>
+      <p class="hotkeys">快捷键：Ctrl/⌘ + S 保存，Ctrl/⌘ + Shift + N 新建</p>
       <div class="preview">
         <h3>预览</h3>
         <div id="previewArea"></div>

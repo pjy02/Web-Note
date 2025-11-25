@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from fastapi import Depends, FastAPI, Form, HTTPException
+from fastapi import Depends, FastAPI, Form, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
@@ -38,8 +38,8 @@ def serve_index():
 
 
 @app.post("/api/login")
-def login_endpoint(password: str = Form("")):
-    return login(password)
+def login_endpoint(request: Request, password: str = Form("")):
+    return login(password, request)
 
 
 @app.post("/api/logout")
